@@ -49,31 +49,23 @@ export const PWAToasts = () => {
       deferredPrompt = e;
 
       const handleInstallClick = async () => {
-        console.log("Current deferredPrompt:", deferredPrompt);
+        if (!deferredPrompt) return;
+        try {
+          await deferredPrompt.prompt();
+          const choiceResult = await deferredPrompt.userChoice;
 
-        if (deferredPrompt) {
-          try {
-            console.log("Showing install prompt...");
-            await deferredPrompt.prompt();
-
-            const choiceResult = await deferredPrompt.userChoice;
-            console.log("Choice result:", choiceResult);
-
-            if (choiceResult.outcome === "accepted") {
-              console.log("User accepted the install prompt");
-              handleAppInstalled();
-            } else {
-              console.log("User dismissed the install prompt");
-            }
-
-            toast.dismiss("install-prompt");
-            deferredPrompt = null;
-          } catch (error) {
-            console.error("Error during install:", error);
-            toast.dismiss("install-prompt");
+          if (choiceResult.outcome === "accepted") {
+            console.log("User accepted the install prompt");
+            handleAppInstalled();
+          } else {
+            console.log("User dismissed the install prompt");
           }
-        } else {
-          console.log("No deferred prompt available");
+
+          toast.dismiss("install-prompt");
+          deferredPrompt = null;
+        } catch (error) {
+          console.error("Error during install:", error);
+          toast.dismiss("install-prompt");
         }
       };
 
