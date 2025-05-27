@@ -1,6 +1,6 @@
 import { type FC } from "react";
 import style from "@styles/components/Image.module.scss";
-import type { ImageProps } from "@/types/components/Image";
+import { type ImageProps } from "@/types/components/Image";
 
 export const Image: FC<ImageProps> = ({
   imageClassName,
