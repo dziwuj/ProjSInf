@@ -31,7 +31,8 @@
       "@assets/*": ["assets/*"],
       "@store/*": ["store/*"],
       "@screens/*": ["screens/*"],
-      "@constants/*": ["constants/*"]
+      "@constants/*": ["constants/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["src"],

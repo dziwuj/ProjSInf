@@ -101,6 +101,7 @@ export default ({ mode }: { mode: string }) => {
         "@store": path.resolve(__dirname, "src/store"),
         "@screens": path.resolve(__dirname, "src/screens"),
         "@constants": path.resolve(__dirname, "src/constants"),
+        "@utils": path.resolve(__dirname, "src/utils"),
       },
     },
   });

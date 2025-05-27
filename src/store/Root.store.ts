@@ -1,10 +1,9 @@
-import { create } from "zustand";
+import { useWeatherStore } from "@store/Weather.store"; // adjust path as needed
 
-import { type RootStore } from "@/types/types";
+import { type RootStore } from "@/types/store/RootStore";
 
-const useStore = create<RootStore>()(set => ({
-  count: 1,
-  inc: () => set(state => ({ count: state.count + 1 })),
-}));
-
-export { useStore };
+export const useStore = (): RootStore => {
+  return {
+    weather: useWeatherStore(),
+  };
+};
