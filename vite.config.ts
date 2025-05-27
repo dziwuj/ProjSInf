@@ -12,6 +12,11 @@ const selfDestroying = process.env.SW_DESTROY === "true";
 export default ({ mode }: { mode: string }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), "") };
 
+  const isDevelopment = mode === "development";
+  const keyPath = path.resolve(__dirname, "src/certs/localhost-key.pem");
+  const certPath = path.resolve(__dirname, "src/certs/localhost.pem");
+  const certificatesExist = fs.existsSync(keyPath) && fs.existsSync(certPath);
+
   return defineConfig({
     build: {
       sourcemap: process.env.SOURCE_MAP === "true",
@@ -69,23 +74,24 @@ export default ({ mode }: { mode: string }) => {
         },
         includeAssets: ["**/*"],
         devOptions: {
-          enabled: process.env.SW_DEV === "true",
+          enabled: isDevelopment,
           type: "module",
           navigateFallback: "index.html",
         },
       }),
     ],
-    server: {
-      https: {
-        key: fs.readFileSync(
-          path.resolve(__dirname, "src/certs/localhost-key.pem"),
-        ),
-        cert: fs.readFileSync(
-          path.resolve(__dirname, "src/certs/localhost.pem"),
-        ),
-      },
-      host: "0.0.0.0",
-    },
+    server:
+      isDevelopment && certificatesExist
+        ? {
+            https: {
+              key: fs.readFileSync(keyPath),
+              cert: fs.readFileSync(certPath),
+            },
+            host: "0.0.0.0",
+          }
+        : {
+            host: "0.0.0.0",
+          },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "src"),
