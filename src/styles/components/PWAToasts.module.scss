@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 8px;
+    min-width: 100px;
 
     button {
       padding: 8px 16px;
@@ -35,6 +36,17 @@
         background-color: variables.$background-color;
         color: variables.$primary-color;
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    &Text {
+      align-self: center;
+      text-align: center;
+      max-width: none;
+      width: 100%;
+      margin-bottom: 16px;
+      font-size: 20px;
     }
   }
 }
