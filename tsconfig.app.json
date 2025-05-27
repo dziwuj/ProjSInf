@@ -30,7 +30,8 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@store/*": ["store/*"],
-      "@screens/*": ["screens/*"]
+      "@screens/*": ["screens/*"],
+      "@constants/*": ["constants/*"]
     }
   },
   "include": ["src"],
