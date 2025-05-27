@@ -1,8 +1,8 @@
 import { create } from "zustand";
 
-import { type Store } from "@/types/types";
+import { type RootStore } from "@/types/types";
 
-const useStore = create<Store>()(set => ({
+const useStore = create<RootStore>()(set => ({
   count: 1,
   inc: () => set(state => ({ count: state.count + 1 })),
 }));
