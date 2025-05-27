@@ -1,5 +1,7 @@
-import { type SWNotificationDataType } from "@/types/types";
 import { type FC } from "react";
+
+import { type SWNotificationDataType } from "@/types/types";
+
 import styles from "@styles/components/ReloadToast.module.scss";
 
 interface ReloadToastProps {

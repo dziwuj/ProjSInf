@@ -1,8 +1,11 @@
-import { useStore } from "@/store/Root.store";
-import { useState, type FC } from "react";
+import { type FC, useState } from "react";
 import HeartIcon from "@assets/icons/heart.svg?react";
-import styles from "@styles/screens/Home.module.scss";
+
 import { Image } from "@/components";
+import { useStore } from "@/store/Root.store";
+
+import styles from "@styles/screens/Home.module.scss";
+
 import dressImage from "@assets/images/blue-dress.png";
 
 export const Home: FC = () => {

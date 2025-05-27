@@ -1,4 +1,5 @@
 import { create } from "zustand";
+
 import { type Store } from "@/types/types";
 
 const useStore = create<Store>()(set => ({

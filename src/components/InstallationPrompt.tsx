@@ -1,5 +1,6 @@
 import { type FC, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+
 import styles from "@styles/components/InstallationPrompt.module.scss";
 
 interface InstallPromptProps {

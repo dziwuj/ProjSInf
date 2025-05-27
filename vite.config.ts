@@ -1,9 +1,9 @@
 import react from "@vitejs/plugin-react";
-import { defineConfig, loadEnv } from "vite";
-import { VitePWA } from "vite-plugin-pwa";
-import process from "node:process";
 import fs from "node:fs";
 import path from "node:path";
+import process from "node:process";
+import { defineConfig, loadEnv } from "vite";
+import { VitePWA } from "vite-plugin-pwa";
 
 const selfDestroying = process.env.SW_DESTROY === "true";
 

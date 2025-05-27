@@ -1,10 +1,11 @@
-import { useEffect, type FC } from "react";
+import { type FC, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
-import { HomeScreen } from "@/screens";
-import type { SWNotificationType } from "./types/types";
 import { Bounce, toast, ToastContainer } from "react-toastify";
-import PWABadge from "./PWABadge";
-import { InstallationPrompt, ReloadToast } from "./components";
+
+import { InstallationPrompt, ReloadToast } from "@/components";
+import PWABadge from "@/PWABadge";
+import { HomeScreen } from "@/screens";
+import type { SWNotificationType } from "@/types/types";
 
 interface AppProps {
   SWNotification?: SWNotificationType;
