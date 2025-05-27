@@ -1,5 +1,5 @@
 import { Image } from "./Image";
-import { InstallationPrompt } from "./InstallationPrompt";
+import { PWAToasts } from "./PWAToasts";
 import { ReloadToast } from "./ReloadToast";
 
-export { Image, InstallationPrompt, ReloadToast };
+export { Image, PWAToasts, ReloadToast };

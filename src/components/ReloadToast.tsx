@@ -4,26 +4,26 @@ import { type SWNotificationDataType } from "@/types/types";
 
 import styles from "@styles/components/ReloadToast.module.scss";
 
-interface ReloadToastProps {
-  data: SWNotificationDataType;
-}
-
-export const ReloadToast: FC<ReloadToastProps> = ({ data }) => {
+export const ReloadToast: FC<SWNotificationDataType> = ({
+  title,
+  buttonText,
+  onConfirm,
+}) => {
   return (
     <div className={styles.reloadToast}>
       <div className={styles.reloadToastText}>
-        <h2 className={styles.reloadToastTitle}>{data.title}</h2>
+        <h2 className={styles.reloadToastTitle}>{title}</h2>
       </div>
       <button
         className={styles.reloadToastButton}
-        title="Update"
+        title={buttonText}
         type="button"
         onClick={() => {
-          if (data.onConfirm) {
-            data.onConfirm();
+          if (onConfirm) {
+            onConfirm();
           }
         }}>
-        <span className={styles.reloadToastButtonText}>{data.buttonText}</span>
+        <span className={styles.reloadToastButtonText}>{buttonText}</span>
       </button>
     </div>
   );

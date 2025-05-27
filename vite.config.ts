@@ -4,6 +4,7 @@ import path from "node:path";
 import process from "node:process";
 import { defineConfig, loadEnv } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+import svgr from "vite-plugin-svgr";
 
 const selfDestroying = process.env.SW_DESTROY === "true";
 
@@ -17,6 +18,7 @@ export default ({ mode }: { mode: string }) => {
     },
     plugins: [
       react(),
+      svgr(),
       VitePWA({
         mode: "development",
         base: "/",
