@@ -3,7 +3,7 @@
 .music {
   background-color: variables.$primary-color;
   width: 100%;
-  height: 20%;
+  height: 23vh;
   transform: translateY(20px);
   display: flex;
   justify-content: space-around;
@@ -11,7 +11,7 @@
   border-radius: 16px 16px 0 0;
   box-sizing: border-box;
   padding: 1rem;
-  padding-bottom: 2rem;
+  padding-bottom: 30px;
 
   &Container {
     width: 70%;
@@ -38,7 +38,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    gap: 0.5rem;
+    gap: 0.1rem;
 
     &Title {
       color: variables.$white-color;
