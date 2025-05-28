@@ -36,7 +36,17 @@ export const WeatherDisplay: FC = () => {
                 <WeatherIcon className={styles.weatherCurrentIcon} />
               </div>
               <div className={styles.weatherForecast}>
-                <div className={styles.weatherForecastItem}></div>
+                {weather.map((item, index) => (
+                  <div key={index} className={styles.weatherForecastItem}>
+                    <span className={styles.weatherForecastItemTime}>
+                      {`${item.time.slice(11, 16)}`}
+                    </span>
+                    <span className={styles.weatherForecastItemTemp}>
+                      {`${item.temperature_2m}\u00b0`}
+                    </span>
+                    <WeatherIcon className={styles.weatherForecastItemIcon} />
+                  </div>
+                ))}
               </div>
             </div>
           ) : (

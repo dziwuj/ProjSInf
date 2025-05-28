@@ -12,7 +12,7 @@ const selfDestroying = process.env.SW_DESTROY === "true";
 export default ({ mode }: { mode: string }) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), "") };
 
-  const isDevelopment = mode === "development";
+  const isDevelopment = process.env.SW_DEV === "true";
   const keyPath = path.resolve(__dirname, "src/certs/localhost-key.pem");
   const certPath = path.resolve(__dirname, "src/certs/localhost.pem");
   const certificatesExist = fs.existsSync(keyPath) && fs.existsSync(certPath);
