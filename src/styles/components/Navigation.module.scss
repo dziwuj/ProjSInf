@@ -10,6 +10,7 @@
   height: 100px;
   background-color: variables.$secondary-color;
   border-radius: 16px 16px 0 0;
+  z-index: 1000;
 
   &Icon {
     width: 3rem;

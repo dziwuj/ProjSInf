@@ -1,0 +1,71 @@
+[
+  {
+    "weather": "Clear",
+    "message": "Today's forecast: Clear. It's going to be a sunny day – take sunglasses and wear something light.",
+    "tags": ["#casual", "#summer"],
+    "playlist": {
+      "title": "Relaxing Rhythms",
+      "link": "https://open.spotify.com/playlist/68rbu1U3UMV2V3fM1sHXT2",
+      "songs": [
+        {
+          "name": "Somewhere over the Rainbow - Israel Kamakawiwoʻole",
+          "link": "https://open.spotify.com/track/3oQomOPRNQ5NVFUmLJHbAV"
+        },
+        {
+          "name": "Artysta z ASP - Kacperczyk",
+          "link": "https://open.spotify.com/track/7k86dxnpA1ST408ivqWlmT"
+        },
+        {
+          "name": "Blinding Lights - The Weekend",
+          "link": "https://open.spotify.com/track/0VjIjW4GlUZAMYd2vXMi3b"
+        }
+      ]
+    }
+  },
+  {
+    "weather": "Rain",
+    "message": "Today's forecast: Rain. Expected precipitation - take an umbrella and wear waterproof shoes.",
+    "tags": ["#rainy", "#urban"],
+    "playlist": {
+      "title": "a playlist for rainy days",
+      "link": "https://open.spotify.com/playlist/47S4MBG0EEXwA0GdJUA4Ur",
+      "songs": [
+        {
+          "name": "Set Fire to the Rain - Adele",
+          "link": "https://open.spotify.com/track/3di5hcvxxciiqwMH1jarhY"
+        },
+        {
+          "name": "It Will Rain - Bruno Mars",
+          "link": "https://open.spotify.com/track/0M3HkE321xpCbCYqVKzr1q"
+        },
+        {
+          "name": "Rain - Ben Platt",
+          "link": "https://open.spotify.com/track/55PC8EQgaWWrIgP0H2VC6x"
+        }
+      ]
+    }
+  },
+  {
+    "weather": "Cloudy",
+    "message": "Today's forecast: Cloudy. It's going to be a cloudy day - a light jacket or hoodie will come in handy.",
+    "tags": ["#casual", "#neutral"],
+    "playlist": {
+      "title": "Cloudy Beats",
+      "link": "https://open.spotify.com/playlist/20gJ268Ld5npKFxtlXlZ4Y",
+      "songs": [
+        {
+          "name": "Clouds – BØRNS",
+          "link": "https://open.spotify.com/track/03v70ZBxmcPX3RWAZMzqaW"
+        },
+        {
+          "name": "Grey – Why Don't We",
+          "link": "https://open.spotify.com/track/2J4DpqJCIuuM9WjtWHbjvd"
+        },
+        {
+          "name": "Intro – The xx",
+          "link": "https://open.spotify.com/track/2usrT8QIbIk9y0NEtQwS4j"
+        }
+      ]
+    }
+  }
+]
