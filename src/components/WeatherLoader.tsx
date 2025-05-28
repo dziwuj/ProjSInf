@@ -7,8 +7,10 @@ export const WeatherLoader = () => {
 
   useEffect(() => {
     if (!navigator.geolocation) {
-      console.error("Geolocation not supported");
-      return;
+      console.error(
+        "Geolocation not supported, fetching default weather data.",
+      );
+      fetchWeather(50.049683, 19.944544); // weather for Krakow, Poland
     }
 
     navigator.geolocation.getCurrentPosition(

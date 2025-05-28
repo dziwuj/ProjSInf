@@ -1,14 +1,13 @@
 interface DailyWeather {
-  time: string[];
-  temperature_2m_max: number[];
-  temperature_2m_min: number[];
-  precipitation_sum: number[];
-  windspeed_10m_max: number[];
-  weathercode: number[];
+  time: string;
+  temperature_2m: number;
+  precipitation: number;
+  windSpeed_10m: number;
+  weatherCode: number;
 }
 
 interface WeatherStore {
-  weather: DailyWeather | null;
+  weather: DailyWeather[] | [];
   loading: boolean;
   errorMessage: string | null;
   fetchWeather: (lat: number, lon: number) => void;
