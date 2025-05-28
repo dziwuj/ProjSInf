@@ -45,14 +45,16 @@ export const MusicDisplay: FC = () => {
             ))}
         </div>
       </div>
-      <a
-        className={styles.musicButtonContainer}
-        href={musicData && musicData.playlist.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Open music playlist">
-        <PlayIcon className={styles.musicButton} />
-      </a>
+      {musicData && (
+        <a
+          className={styles.musicButtonContainer}
+          href={musicData && musicData.playlist.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open music playlist">
+          <PlayIcon className={styles.musicButton} />
+        </a>
+      )}
     </div>
   );
 };
