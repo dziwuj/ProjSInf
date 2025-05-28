@@ -35,7 +35,7 @@ export const WeatherDisplay: FC = () => {
                 </div>
                 <WeatherIcon className={styles.weatherCurrentIcon} />
               </div>
-              <div className={styles.weatherForecast}>
+              <div className={styles.weatherForecast} tabIndex={0}>
                 {weather.map((item, index) => (
                   <div key={index} className={styles.weatherForecastItem}>
                     <span className={styles.weatherForecastItemTime}>

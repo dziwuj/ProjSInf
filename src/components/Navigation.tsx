@@ -11,6 +11,7 @@ export const Navigation: FC = () => {
   return (
     <nav className={styles.nav}>
       <NavLink
+        aria-label="Home"
         to="/"
         className={({ isActive }) =>
           isActive
@@ -20,6 +21,7 @@ export const Navigation: FC = () => {
         <HomeIcon className={styles.navIconSvg} />
       </NavLink>
       <NavLink
+        aria-label="Wardrobe"
         to="/wardrobe"
         className={({ isActive }) =>
           isActive
@@ -30,6 +32,7 @@ export const Navigation: FC = () => {
       </NavLink>
 
       <NavLink
+        aria-label="Preferences"
         to="/preferences"
         className={({ isActive }) =>
           isActive
@@ -39,6 +42,7 @@ export const Navigation: FC = () => {
         <PreferencesIcon className={styles.navIconSvg} />
       </NavLink>
       <NavLink
+        aria-label="Settings"
         to="/settings"
         className={({ isActive }) =>
           isActive

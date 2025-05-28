@@ -1,0 +1,36 @@
+@use "@styles/_variables";
+
+.outfit {
+  height: 50vh;
+  width: 100%;
+  transform: translateY(5vh);
+  padding: 0 1rem 5vh 1rem;
+  box-sizing: border-box;
+  display: flex;
+
+  &Section {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &:nth-child(1) {
+      align-items: flex-start;
+    }
+
+    &:nth-child(2) {
+      align-items: center;
+    }
+    &:nth-child(3) {
+      align-items: flex-end;
+    }
+  }
+  &Title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: variables.$primary-color;
+    margin-bottom: 1rem;
+  }
+}

@@ -49,7 +49,8 @@ export const MusicDisplay: FC = () => {
         className={styles.musicButtonContainer}
         href={musicData && musicData.playlist.link}
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        aria-label="Open music playlist">
         <PlayIcon className={styles.musicButton} />
       </a>
     </div>

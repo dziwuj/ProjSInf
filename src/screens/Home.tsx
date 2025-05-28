@@ -1,6 +1,6 @@
 import { type FC, useEffect } from "react";
 
-import { MusicDisplay, WeatherDisplay } from "@/components";
+import { MusicDisplay, OutfitDisplay, WeatherDisplay } from "@/components";
 import { useStore } from "@/store/Root.store";
 import { getWeatherDescription } from "@/utils/weatherUtils";
 
@@ -19,6 +19,7 @@ export const Home: FC = () => {
     <div className={styles.homeContainer}>
       <WeatherDisplay />
       <MusicDisplay />
+      <OutfitDisplay />
     </div>
   );
 };
