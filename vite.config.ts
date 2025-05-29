@@ -33,6 +33,7 @@ export default ({ mode }: { mode: string }) => {
         injectManifest: {
           minify: false,
           enableWorkboxModulesLogs: true,
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB
         },
         registerType: "autoUpdate",
         selfDestroying: selfDestroying,
