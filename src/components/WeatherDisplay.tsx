@@ -44,7 +44,12 @@ export const WeatherDisplay: FC = () => {
                     <span className={styles.weatherForecastItemTemp}>
                       {`${item.temperature_2m}\u00b0`}
                     </span>
-                    <WeatherIcon className={styles.weatherForecastItemIcon} />
+                    {(() => {
+                      const Icon = getWeatherIcon(item.weatherCode);
+                      return (
+                        <Icon className={styles.weatherForecastItemIcon} />
+                      );
+                    })()}
                   </div>
                 ))}
               </div>

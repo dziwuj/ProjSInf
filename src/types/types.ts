@@ -24,10 +24,13 @@ type WeatherTypes =
   | "Thunderstorm with Hail"
   | "Unknown";
 
+type SimpleWeatherTypes = "Clear" | "Cloudy" | "Rain" | "Unknown";
+
 type IconComponent = FC<SVGProps<SVGSVGElement>>;
 
 export type {
   IconComponent,
+  SimpleWeatherTypes,
   SWNotificationDataType,
   SWNotificationType,
   WeatherTypes,

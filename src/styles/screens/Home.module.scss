@@ -7,7 +7,24 @@
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column-reverse;
     box-sizing: border-box;
+  }
+
+  &Title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: variables.$primary-color;
+    font-size: 1rem;
+    font-weight: 600;
+    color: variables.$white-color;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+    width: 80%;
+    padding: 0.7rem;
+    margin: 1vh 0;
+    height: 2vh;
   }
 }

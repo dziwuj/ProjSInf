@@ -3,7 +3,7 @@
 .music {
   background-color: variables.$primary-color;
   width: 100%;
-  height: 23vh;
+  height: 20vh;
   transform: translateY(20px);
   display: flex;
   justify-content: space-around;
@@ -25,9 +25,8 @@
 
   &Title {
     color: variables.$white-color;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    margin: 0.1rem 0;
     text-align: center;
   }
 
@@ -38,11 +37,10 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    gap: 0.1rem;
 
     &Title {
       color: variables.$white-color;
-      font-size: 1.25rem;
+      font-size: 1rem;
       font-weight: 600;
       text-align: center;
     }
@@ -55,7 +53,7 @@
         display: block;
         width: 100%;
         color: variables.$white-color;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
         font-weight: 400;
         text-decoration: none;
         text-overflow: ellipsis;

@@ -28,6 +28,7 @@
     "*.scss": "prettier --write"
   },
   "dependencies": {
+    "pulltorefreshjs": "^0.1.22",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.1",
@@ -37,6 +38,7 @@
   "devDependencies": {
     "@eslint/js": "^9.25.0",
     "@types/node": "^22.15.21",
+    "@types/pulltorefreshjs": "^0.1.7",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vite-pwa/assets-generator": "^1.0.0",

@@ -7,14 +7,14 @@
   align-items: center;
   justify-content: space-evenly;
   width: 100vw;
-  height: 100px;
+  height: 80px;
   background-color: variables.$secondary-color;
   border-radius: 16px 16px 0 0;
   z-index: 1000;
 
   &Icon {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     padding: 4px;
     color: variables.$white-color;
     transition: color 0.3s ease;

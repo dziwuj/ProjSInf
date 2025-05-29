@@ -8,7 +8,11 @@ import FogIcon from "@assets/icons/smog-solid.svg?react";
 import SnowIcon from "@assets/icons/snowflake-solid.svg?react";
 import SunIcon from "@assets/icons/sun-solid.svg?react";
 
-import type { IconComponent, WeatherTypes } from "@/types/types";
+import type {
+  IconComponent,
+  SimpleWeatherTypes,
+  WeatherTypes,
+} from "@/types/types";
 
 const getWeatherDescription = (code: number): WeatherTypes => {
   switch (code) {
@@ -50,7 +54,6 @@ const getWeatherDescription = (code: number): WeatherTypes => {
       return "Unknown";
   }
 };
-type SimpleWeatherTypes = "Clear" | "Cloudy" | "Rain" | "Unknown";
 
 const getSimplifiedWeatherDescription = (code: number): SimpleWeatherTypes => {
   switch (code) {
