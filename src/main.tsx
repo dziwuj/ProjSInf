@@ -7,8 +7,8 @@ import App from "./App.tsx";
 
 import "@styles/index.scss";
 
-const standalone = window.matchMedia("(display-mode: standalone)").matches;
-if (standalone && /iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+const standaloneIOS = window.matchMedia("(display-mode: standalone)").matches;
+if (standaloneIOS) {
   PullToRefresh.init({
     mainElement: "body",
     instructionsPullToRefresh: "Pull down to refresh",
