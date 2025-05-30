@@ -2,12 +2,13 @@ import { type FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Bounce, ToastContainer } from "react-toastify";
 
-import { PWAToasts } from "@/components";
+import { PWAToasts, WeatherLoader } from "@/components";
 import {
   HomeScreen,
   NotFoundScreen,
   PreferencesScreen,
-  ScreenWrapper,
+  ScreenNavigationWrapper,
+  ScreenWeatherWrapper,
   SettingsScreen,
   WardrobeScreen,
 } from "@/screens";
@@ -18,15 +19,18 @@ const App: FC = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<ScreenWrapper />}>
+        <Route path="/" element={<ScreenNavigationWrapper />}>
           <Route index element={<HomeScreen />} />
-          <Route path="/wardrobe" element={<WardrobeScreen />} />
-          <Route path="/settings" element={<SettingsScreen />} />
-          <Route path="/preferences" element={<PreferencesScreen />} />
+          <Route element={<ScreenWeatherWrapper />}>
+            <Route path="/wardrobe" element={<WardrobeScreen />} />
+            <Route path="/settings" element={<SettingsScreen />} />
+            <Route path="/preferences" element={<PreferencesScreen />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFoundScreen />} />
       </Routes>
       <PWAToasts />
+      <WeatherLoader />
       <ToastContainer
         position="bottom-left"
         autoClose={5000}

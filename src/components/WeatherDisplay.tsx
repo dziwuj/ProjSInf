@@ -3,8 +3,6 @@ import { type FC, useMemo } from "react";
 import { useStore } from "@/store/Root.store";
 import { getWeatherDescription, getWeatherIcon } from "@/utils/weatherUtils";
 
-import { WeatherLoader } from "./WeatherLoader";
-
 import styles from "@styles/components/WeatherDisplay.module.scss";
 
 export const WeatherDisplay: FC = () => {
@@ -17,7 +15,6 @@ export const WeatherDisplay: FC = () => {
 
   return (
     <div className={styles.weather}>
-      <WeatherLoader />
       {loading ? (
         <h1>Loading weather data...</h1>
       ) : (

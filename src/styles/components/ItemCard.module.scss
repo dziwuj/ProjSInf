@@ -1,0 +1,38 @@
+@use "@styles/_variables.scss";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: fit-content;
+  height: fit-content;
+  background-color: variables.$background-color;
+  border-radius: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  &Title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: variables.$primary-color;
+  }
+  &Image {
+    width: 7rem;
+    padding: 0 0.5rem;
+  }
+  &Buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  &Button {
+    border: none;
+    background: none;
+    padding: 0;
+    &Icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: variables.$primary-color;
+    }
+  }
+}

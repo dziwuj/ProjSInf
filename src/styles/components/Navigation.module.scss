@@ -11,6 +11,7 @@
   background-color: variables.$secondary-color;
   border-radius: 16px 16px 0 0;
   z-index: 1000;
+  box-sizing: border-box;
 
   &Icon {
     width: 2.5rem;
