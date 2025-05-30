@@ -3,7 +3,7 @@
 .music {
   background-color: variables.$primary-color;
   width: 100%;
-  height: 20vh;
+  height: 27.5vh;
   transform: translateY(20px);
   display: flex;
   justify-content: space-around;
@@ -11,7 +11,8 @@
   border-radius: 16px 16px 0 0;
   box-sizing: border-box;
   padding: 1rem;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
+  gap: 20px;
 
   &Container {
     width: 70%;
@@ -19,13 +20,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-around;
     box-sizing: border-box;
   }
 
   &Title {
     color: variables.$white-color;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-weight: 400;
     text-align: center;
   }
@@ -40,7 +41,7 @@
 
     &Title {
       color: variables.$white-color;
-      font-size: 1rem;
+      font-size: 1.25rem;
       font-weight: 600;
       text-align: center;
     }
@@ -53,7 +54,7 @@
         display: block;
         width: 100%;
         color: variables.$white-color;
-        font-size: 0.75rem;
+        font-size: 0.9rem;
         font-weight: 400;
         text-decoration: none;
         text-overflow: ellipsis;
@@ -70,8 +71,8 @@
 
     &Container {
       display: flex;
-      width: 70px;
-      height: fit-content;
+      width: 85px;
+      height: 85px;
       justify-content: center;
       align-items: center;
     }
