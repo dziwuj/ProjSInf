@@ -7,8 +7,10 @@ import {
   AddClothingScreen,
   HomeScreen,
   NotFoundScreen,
+  PreferencesScreen,
   ScreenNavigationWrapper,
   ScreenWeatherWrapper,
+  SettingsScreen,
   WardrobeScreen,
 } from "@/screens";
 
@@ -26,6 +28,8 @@ const App: FC = () => {
               path="/wardrobe/add-clothing"
               element={<AddClothingScreen />}
             />
+            <Route path="/settings" element={<SettingsScreen />} />
+            <Route path="/preferences" element={<PreferencesScreen />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFoundScreen />} />
