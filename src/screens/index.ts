@@ -1,3 +1,4 @@
+import { AddClothing } from "./AddClothing";
 import { Home } from "./Home";
 import { NotFound } from "./NotFound";
 import { Preferences } from "./Preferences";
@@ -7,6 +8,7 @@ import { Settings } from "./Settings";
 import { Wardrobe } from "./Wardrobe";
 
 export {
+  AddClothing as AddClothingScreen,
   Home as HomeScreen,
   NotFound as NotFoundScreen,
   Preferences as PreferencesScreen,

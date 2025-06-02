@@ -1,6 +1,7 @@
 import { type FC } from "react";
 import ArrowDownIcon from "@assets/icons/angle-down-solid.svg?react";
 import ShirtIcon from "@assets/icons/shirt-solid.svg?react";
+import { NavLink } from "react-router-dom";
 
 import { ItemCard } from "@/components";
 import { useStore } from "@/store/Root.store";
@@ -25,11 +26,15 @@ export const Wardrobe: FC = () => {
       </div>
       <div className={styles.wardrobeList}>
         {clothes.map(item => (
-          <ItemCard key={item.name} name={item.name} image={item.image} />
+          <ItemCard key={item.name} {...item} />
         ))}
       </div>
       <div className={styles.wardrobeFooter}>
-        <button className={styles.wardrobeFooterButton}>Add T-shirt</button>
+        <NavLink
+          to="/wardrobe/add-clothing"
+          className={styles.wardrobeFooterButton}>
+          Add T-shirt
+        </NavLink>
       </div>
     </div>
   );

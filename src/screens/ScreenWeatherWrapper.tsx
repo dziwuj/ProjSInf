@@ -16,12 +16,16 @@ export const ScreenWeatherWrapper: FC = () => {
     : "";
   return (
     <>
-      {weather.length !== 0 && (
-        <div className={styles.weatherWrapper}>
-          <span className={styles.weatherWrapperTag}>{weatherType}</span>
-          <span className={styles.weatherWrapperTag}>{currentTemperature}</span>
-        </div>
-      )}
+      <div className={styles.weatherWrapper}>
+        {weather.length !== 0 && (
+          <>
+            <span className={styles.weatherWrapperTag}>{weatherType}</span>
+            <span className={styles.weatherWrapperTag}>
+              {currentTemperature}
+            </span>
+          </>
+        )}
+      </div>
       <Outlet />
     </>
   );

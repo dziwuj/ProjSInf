@@ -4,6 +4,7 @@ import { Bounce, ToastContainer } from "react-toastify";
 
 import { PWAToasts, WeatherLoader } from "@/components";
 import {
+  AddClothingScreen,
   HomeScreen,
   NotFoundScreen,
   PreferencesScreen,
@@ -23,6 +24,10 @@ const App: FC = () => {
           <Route index element={<HomeScreen />} />
           <Route element={<ScreenWeatherWrapper />}>
             <Route path="/wardrobe" element={<WardrobeScreen />} />
+            <Route
+              path="/wardrobe/add-clothing"
+              element={<AddClothingScreen />}
+            />
             <Route path="/settings" element={<SettingsScreen />} />
             <Route path="/preferences" element={<PreferencesScreen />} />
           </Route>
