@@ -8,6 +8,7 @@
   margin: 0 auto;
   width: 100%;
   height: calc(100vh - 140px);
+  margin-bottom: 200px;
   box-sizing: border-box;
 
   &Header {
@@ -80,9 +81,6 @@
     gap: 24px;
     flex: 1;
     width: 100%;
-    // height: fit-content;
-    padding-bottom: 72px;
-    overflow-y: scroll;
   }
 }
 
@@ -141,7 +139,7 @@
 
 .buttonGroup {
   display: flex;
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   width: 100%;
   bottom: 80px;

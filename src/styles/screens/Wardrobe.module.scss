@@ -2,9 +2,8 @@
 
 .wardrobe {
   width: 100%;
-  height: calc(100% - 60px);
+  height: calc(100% - 140px);
   display: flex;
-  padding-bottom: 64px;
   flex-direction: column;
   box-sizing: border-box;
   &Header {
@@ -77,6 +76,8 @@
     background-color: variables.$background-color;
     border-radius: 16px 16px 0 0;
     margin-top: auto;
+    position: fixed;
+    bottom: 80px;
     &Button {
       width: 80%;
       padding: 0.5rem 1rem;
