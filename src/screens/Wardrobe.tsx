@@ -26,7 +26,7 @@ export const Wardrobe: FC = () => {
       </div>
       <div className={styles.wardrobeList}>
         {clothes.map(item => (
-          <ItemCard key={item.name} {...item} />
+          <ItemCard key={item.id} {...item} />
         ))}
       </div>
       <div className={styles.wardrobeFooter}>

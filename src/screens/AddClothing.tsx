@@ -15,8 +15,12 @@ export const AddClothing: FC = () => {
   const navigate = useNavigate();
   const { clothes, getClothesByID, setClothes } = useStore().clothes;
   const location = useLocation();
-  const elementId = location.state?.id;
-  const existingElement = getClothesByID(elementId) || ({} as Clothes);
+  const elementId: string = location.state?.id;
+  const existingElement =
+    getClothesByID(elementId) ||
+    ({
+      id: Date.now().toString(),
+    } as Clothes);
 
   // Extract form field properties to separate state variables
   const [name, setName] = useState(existingElement.name || "");
@@ -67,12 +71,6 @@ export const AddClothing: FC = () => {
     }
 
     setTimeout(() => {
-      // Set the extracted properties
-      setName(mockItem.name);
-      setDescription(mockItem.description);
-      setTags(mockItem.tags);
-      setImage(mockItem.image);
-
       const newElement: Clothes = {
         id: mockItem.id,
         name: mockItem.name,
@@ -87,32 +85,23 @@ export const AddClothing: FC = () => {
 
   const handleSave = (e: FormEvent) => {
     e.preventDefault();
-    if (editedElement.image === undefined) {
+    if (image === "") {
       alert("Provide all data (including photo)!");
       return;
     }
-    if (editedElement) {
-      // Make sure editedElement has the latest form values
-      const updatedElement = {
-        ...editedElement,
-        name,
-        description,
-        tags,
-      };
 
-      if (elementId) {
-        // Update existing
-        setClothes(
-          clothes.map(item =>
-            item.id === updatedElement.id ? updatedElement : item,
-          ),
-        );
-      } else {
-        // Add new
-        setClothes([...clothes, updatedElement]);
-      }
-      navigate("/wardrobe");
+    if (elementId) {
+      // Update existing
+      setClothes(
+        clothes.map(item =>
+          item.id === editedElement.id ? editedElement : item,
+        ),
+      );
+    } else {
+      setClothes([...clothes, editedElement]);
     }
+    setEditedElement({} as Clothes);
+    navigate("/wardrobe");
   };
 
   return (
@@ -188,7 +177,10 @@ export const AddClothing: FC = () => {
           </button>
           <button
             className={styles.cancelButton}
-            onClick={() => navigate("/wardrobe")}>
+            onClick={() => {
+              setEditedElement({} as Clothes);
+              navigate("/wardrobe");
+            }}>
             Cancel
           </button>
         </div>
