@@ -10,7 +10,7 @@ type ClothesStore = {
   clothes: Clothes[];
   getClothesByID: (id: string | null) => Clothes | null;
   setClothes: (clothes: Clothes[]) => void;
-  removeClothes: (id: number) => void;
+  removeClothes: (id: string) => void;
 };
 
 export type { Clothes, ClothesStore };
