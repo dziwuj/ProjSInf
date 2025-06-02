@@ -1,0 +1,33 @@
+//base list of tags for clothes
+const BASE_TAG_LIST: string[] = [
+  "casual",
+  "formal",
+  "business",
+  "sporty",
+  "vintage",
+  "streetwear",
+  "elegant",
+  "comfortable",
+  "trendy",
+  "classic",
+  "bohemian",
+  "chic",
+  "edgy",
+  "minimalist",
+  "colorful",
+  "monochrome",
+  "sustainable",
+  "luxury",
+  "athleisure",
+  "retro",
+  "seasonal",
+  "holiday",
+  "party",
+  "workwear",
+  "outdoor",
+  "beachwear",
+  "loungewear",
+  "activewear",
+];
+
+export { BASE_TAG_LIST };

@@ -1,9 +1,10 @@
-import { type FC, type FormEvent, useEffect, useState } from "react";
+import { type FC, type FormEvent, useEffect, useRef, useState } from "react";
 import CameraIcon from "@assets/icons/camera-solid.svg?react";
 import ShirtIcon from "@assets/icons/shirt-solid.svg?react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { Image } from "@/components";
+import { Image, TagSelect } from "@/components";
+import { BASE_TAG_LIST } from "@/constants/constants";
 import mockCategoryData from "@/constants/mockCategoryData.json";
 import { useStore } from "@/store/Root.store";
 import type { Clothes } from "@/types/store/ClothesStore";
@@ -32,6 +33,24 @@ export const AddClothing: FC = () => {
 
   // Keep editedElement for other properties
   const [editedElement, setEditedElement] = useState<Clothes>(existingElement);
+
+  useEffect(() => {
+    const handleFocus = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+        setTimeout(() => {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "nearest",
+          });
+        }, 300);
+      }
+    };
+
+    document.addEventListener("focusin", handleFocus);
+    return () => document.removeEventListener("focusin", handleFocus);
+  }, []);
 
   // Sync the separate state with editedElement when needed
   useEffect(() => {
@@ -133,8 +152,11 @@ export const AddClothing: FC = () => {
 
       <form onSubmit={handleSave}>
         <div className={styles.formGroup}>
-          <label>Name</label>
+          <label htmlFor="name">Name</label>
           <input
+            id="name"
+            className={styles.formGroupInput}
+            name="name"
             type="text"
             required
             value={name}
@@ -144,8 +166,11 @@ export const AddClothing: FC = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Description</label>
+          <label htmlFor="description">Description</label>
           <input
+            className={styles.formGroupInput}
+            id="description"
+            name="description"
             type="text"
             required
             value={description}
@@ -155,15 +180,11 @@ export const AddClothing: FC = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Tags</label>
-          <input
-            type="text"
-            required
-            value={tags.join(", ")}
-            onChange={e =>
-              setTags(e.target.value.split(",").map(tag => tag.trim()))
-            }
-            placeholder="Add tag"
+          <label htmlFor="tags">Tags</label>
+          <TagSelect
+            selectedTags={tags}
+            setSelectedTags={setTags}
+            predefinedTags={BASE_TAG_LIST}
           />
         </div>
 
