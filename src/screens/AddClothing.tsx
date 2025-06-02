@@ -38,13 +38,29 @@ export const AddClothing: FC = () => {
     const handleFocus = (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.tagName === "INPUT" || target.tagName === "TEXTAREA") {
+        // Add a bit more delay to ensure keyboard is fully open
         setTimeout(() => {
-          target.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "nearest",
-          });
-        }, 300);
+          // Use a larger offset to ensure element is well above keyboard
+          const viewportHeight = window.innerHeight;
+          const elementTop = target.getBoundingClientRect().top;
+          const elementHeight = target.offsetHeight;
+          const keyboardHeight = viewportHeight * 0.4; // Estimate keyboard height as 40% of viewport
+
+          // Calculate position that places element above keyboard with padding
+          const desiredPosition =
+            viewportHeight - keyboardHeight - elementHeight - 20;
+
+          // Only scroll if element would be hidden by keyboard
+          if (elementTop > desiredPosition) {
+            // Use window.scrollTo for better performance than scrollIntoView
+            const scrollAmount =
+              window.scrollY + (elementTop - desiredPosition);
+            window.scrollTo({
+              top: scrollAmount,
+              behavior: "smooth",
+            });
+          }
+        }, 400); // Longer delay to account for keyboard animation
       }
     };
 
