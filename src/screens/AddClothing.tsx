@@ -1,4 +1,4 @@
-import { type FC, type FormEvent, useEffect, useRef, useState } from "react";
+import { type FC, type FormEvent, useEffect, useState } from "react";
 import CameraIcon from "@assets/icons/camera-solid.svg?react";
 import ShirtIcon from "@assets/icons/shirt-solid.svg?react";
 import { useLocation, useNavigate } from "react-router-dom";
