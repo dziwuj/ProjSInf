@@ -11,15 +11,20 @@ import styles from "@styles/components/TagSelect.module.scss";
 export const TagSelect: FC<TagSelectProps> = ({
   predefinedTags,
   setSelectedTags,
-  selectedTags,
+  selectedTags = [],
 }) => {
-  const [tags, setTags] = useState<string[]>(selectedTags || []);
+  const [tags, setTags] = useState<string[]>(selectedTags);
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState<string[]>(predefinedTags);
   const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
 
   const [inputRef, clickedOutside, resetClickedOutside] =
     useClickOutside<HTMLDivElement>();
+
+  // Add this effect to sync with selectedTags from props when they change
+  useEffect(() => {
+    setTags(selectedTags);
+  }, [selectedTags]);
 
   useEffect(() => {
     if (clickedOutside && showSuggestions) {
@@ -104,12 +109,14 @@ export const TagSelect: FC<TagSelectProps> = ({
                   Add "{inputValue}"
                 </li>
               ) : (
-                <li
-                  key={suggestions[4]}
-                  onClick={() => handleAddTag(suggestions[4])}
-                  className={styles.suggestionsItem}>
-                  {suggestions[4]}
-                </li>
+                suggestions.length > 3 && (
+                  <li
+                    key={suggestions[4]}
+                    onClick={() => handleAddTag(suggestions[4])}
+                    className={styles.suggestionsItem}>
+                    {suggestions[4]}
+                  </li>
+                )
               )}
             </>
           </ul>

@@ -1,7 +1,7 @@
 import { type FC, type FormEvent, useEffect, useState } from "react";
 import CameraIcon from "@assets/icons/camera-solid.svg?react";
 import ShirtIcon from "@assets/icons/shirt-solid.svg?react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 import { Image, TagSelect } from "@/components";
 import { BASE_TAG_LIST } from "@/constants/constants";
@@ -114,7 +114,10 @@ export const AddClothing: FC = () => {
         image: mockItem.image,
       };
 
-      setEditedElement(newElement);
+      setName(newElement.name);
+      setDescription(newElement.description);
+      setTags(newElement.tags);
+      setImage(newElement.image);
     }, 3000);
   };
 
@@ -212,14 +215,9 @@ export const AddClothing: FC = () => {
           <button type="submit" className={styles.saveButton}>
             Save
           </button>
-          <button
-            className={styles.cancelButton}
-            onClick={() => {
-              setEditedElement({} as Clothes);
-              navigate("/wardrobe");
-            }}>
+          <NavLink className={styles.cancelButton} to="/wardrobe">
             Cancel
-          </button>
+          </NavLink>
         </div>
       </form>
     </div>
